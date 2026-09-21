@@ -1,0 +1,60 @@
+.wallet-container {
+    width: 400px;
+    margin: 60px auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .balance-card {
+    padding: 25px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .balance-card span {
+    display: block;
+    margin-bottom: 10px;
+    color: #666;
+  }
+  
+  .balance-card strong {
+    font-size: 32px;
+  }
+  
+  .withdraw-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  input {
+    padding: 12px;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    cursor: not-allowed;
+  }
+  
+  .success {
+    margin-top: 20px;
+    padding: 12px;
+    background: #e8f5e9;
+  }
+  
+  .error {
+    margin-top: 20px;
+    padding: 12px;
+    background: #ffebee;
+  }

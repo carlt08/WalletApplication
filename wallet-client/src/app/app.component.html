@@ -1,0 +1,41 @@
+<div class="wallet-container">
+
+  <h1>Wallet</h1>
+
+  <div class="balance-card">
+    <span>Current Balance</span>
+    <strong>R {{ balance | number:'1.2-2' }}</strong>
+  </div>
+
+  <div class="withdraw-section">
+
+    <label for="amount">Withdrawal Amount</label>
+
+    <input
+      id="amount"
+      type="number"
+      [(ngModel)]="withdrawalAmount"
+      placeholder="Enter amount"
+      min="0.01"
+      step="0.01">
+
+    <button
+      type="button"
+      (click)="withdraw()"
+      [disabled]="loading">
+
+      {{ loading ? 'Processing...' : 'Withdraw' }}
+
+    </button>
+
+  </div>
+
+  <div class="success" *ngIf="message">
+    {{ message }}
+  </div>
+
+  <div class="error" *ngIf="error">
+    {{ error }}
+  </div>
+
+</div>
