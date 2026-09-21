@@ -1,0 +1,33 @@
+# .NET build output
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Test results
+TestResults/
+*.trx
+
+# SQLite database
+*.db
+*.db-shm
+*.db-wal
+
+# Angular / Node
+node_modules/
+.angular/
+dist/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
