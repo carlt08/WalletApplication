@@ -363,21 +363,45 @@ The design decisions — rules in the entity, a dedicated `Version` token over r
 
 A small Angular 16 client is included to demonstrate the API interaction.
 
-It:
+The client:
 
-- Loads the seeded wallet balance when the page opens.
-- Allows the user to enter a withdrawal amount.
-- Sends the withdrawal to the API.
-- Displays the updated balance after a successful withdrawal.
-- Displays validation/API errors when a withdrawal fails.
+Loads the seeded wallet balance when the page opens.
+Allows the user to enter a withdrawal amount.
+Sends the withdrawal request to the API.
+Displays the updated balance after a successful withdrawal.
+Displays validation and API errors when a withdrawal fails.
 
 The client is intentionally minimal because the assessment focuses primarily on the backend.
 
-To run it:
+Run the Angular client
 
-```sh
+From the repository root:
+
 cd wallet-client
 npm install
 ng serve
 
-- CORS is open to `http://localhost:4200` only, which is fine for local development but would need changing for any other environment.
+Then open:
+
+http://localhost:4200
+
+The Angular client expects the Wallet API to be running locally. Start the API first using the backend instructions above.
+
+Application flow
+Angular Client
+      |
+      v
+WalletController
+      |
+      v
+WalletService
+      |
+      v
+WalletRepository
+      |
+      v
+SQLite Database
+
+The Angular client is responsible only for displaying the wallet balance and submitting withdrawal requests. The backend remains responsible for validation, withdrawal business rules, persistence, concurrency handling, and emitting the withdrawal event.
+
+
